@@ -1,0 +1,93 @@
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px auto;
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.todo-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.todo-container form {
+  display: flex;
+  width: 100%;
+}
+
+.todo-container input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  background-color: #f7f7f7;
+}
+
+.todo-container button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 5px;
+  width: 100%;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.todo-item p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.todo-item form {
+  display: flex;
+  align-items: center;
+}
+
+.todo-item input[type="text"] {
+  flex-grow: 1;
+  padding: 5px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+}
+
+.todo-item button[type="submit"] {
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+.todo-item button:not([type="submit"]) {
+  margin-left: 5px;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #f44336;
+  color: #fff;
+  cursor: pointer;
+}
