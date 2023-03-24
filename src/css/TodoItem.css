@@ -140,7 +140,7 @@
   transform: rotate(45deg);
 }
 
-.right-side{
+.right-side {
   display: flex;
   align-items: center;
   gap: 10px;

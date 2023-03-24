@@ -1,10 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TodoItem from "./TodoItem";
 import "../css/Todo.css";
 
 function Todo() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const storedTodos = JSON.parse(localStorage.getItem("todos"));
+    return storedTodos !== null ? storedTodos : [];
+  });
   const [inputValue, setInputValue] = useState("");
+
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem("todos"));
+    setTodos(storedTodos);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,7 +39,6 @@ function Todo() {
   };
 
   const handleEditTodo = (id, title, completed) => {
-    console.log(title);
     setTodos(
       todos.map((todo) => {
         if (todo.id === id) {
