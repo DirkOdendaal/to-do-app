@@ -6,6 +6,7 @@
   width: 90%;
   max-width: 500px;
   padding: 20px;
+  min-height: 100vh;
 }
 
 .todo-container h1 {
@@ -16,6 +17,10 @@
 .todo-container form {
   display: flex;
   width: 100%;
+}
+
+input:focus {
+  outline: none;
 }
 
 .todo-container input[type="text"] {

@@ -2,71 +2,92 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid rgb(32, 32, 32);
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.todo-item:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.todo-item.completed {
+  opacity: 0.6;
+}
+
+.todo-item .right-side {
+  display: flex;
+  align-items: center;
 }
 
 .todo-item p {
-  margin: 0;
-  font-size: 1.2rem;
+  margin-left: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
 }
 
-.todo-item form {
+.todo-item label.checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 16px 0 0;
+  cursor: pointer;
+}
+
+.todo-item label.checkbox input[type="checkbox"] {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.todo-item label.checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.todo-item.completed p {
+  text-decoration: line-through;
+}
+
+.todo-item.completed .edit {
+  display: none;
+}
+
+.todo-item label.checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 7px;
+  top: 3px;
+  width: 4px;
+  height: 8px;
+  border: solid #333;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.todo-item label.checkbox input[type="checkbox"]:checked + .checkmark:after {
+  display: block;
+}
+.todo-item .buttons {
+  opacity: 0;
   display: flex;
   align-items: center;
-}
-
-.todo-item input[type="text"] {
-  flex-grow: 1;
-  padding: 5px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #f7f7f7;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .todo-item:hover .buttons {
-  display: flex;
-}
-
-.todo-item:hover .checkbox {
-  display: flex;
-}
-
-.todo-item .buttons {
-  display: none;
-}
-
-.todo-item .checkbox {
-  display: none;
-}
-
-.todo-item button[type="submit"] {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px 10px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #4caf50;
-  color: #fff;
-  cursor: pointer;
-}
-
-.todo-item button:not([type="submit"]) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 5px;
-  padding: 5px 10px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #f44336;
-  color: #fff;
-  cursor: pointer;
+  opacity: 5;
 }
 
 .todo-item .edit:hover {
@@ -79,69 +100,9 @@
   cursor: pointer;
 }
 
-.todo-item.completed p {
-  text-decoration: line-through;
-}
-
-.todo-item.completed .edit {
-  display: none;
-}
-
-.checkbox {
-  position: relative;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-}
-
-.checkbox input {
-  position: absolute;
-  opacity: 0;
+.todo-item .buttons svg {
+  margin-right: 8px;
   cursor: pointer;
-}
-
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-.checkbox:hover .checkmark {
-  background-color: #f2f2f2;
-  cursor: pointer;
-}
-
-.checkbox input:checked ~ .checkmark {
-  background-color: #4caf50;
-}
-
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-.checkbox input:checked ~ .checkmark:after {
-  display: block;
-}
-
-.checkmark:after {
-  left: 7px;
-  top: 3px;
-  width: 4px;
-  height: 8px;
-  border: solid #fff;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-
-.right-side {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  color: #777;
+  transition: color 0.2s ease-in-out;
 }

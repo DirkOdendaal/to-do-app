@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import TodoItem from "./TodoItem";
 import "../css/Todo.css";
+import { v4 as uuidv4 } from "uuid";
 
 function Todo() {
   const [todos, setTodos] = useState(() => {
@@ -22,9 +23,10 @@ function Todo() {
     e.preventDefault();
     if (!inputValue) return;
     const newTodo = {
-      id: Math.random().toString(36).substring(7),
+      id: uuidv4(),
       title: inputValue,
       completed: false,
+      // notes: "",
     };
     setTodos([...todos, newTodo]);
     setInputValue("");
