@@ -26,11 +26,12 @@ function Todo() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  const handleEditTodo = (id, title) => {
+  const handleEditTodo = (id, title, completed) => {
+    console.log(title);
     setTodos(
       todos.map((todo) => {
         if (todo.id === id) {
-          return { ...todo, title };
+          return { ...todo, title, completed };
         }
         return todo;
       })
