@@ -1,8 +1,8 @@
-## Todo List Application
+# Todo List Application
 
 This is a simple Todo List application built using React. It allows you to add, edit and delete todos, as well as persist them using local storage.
 
-# Installation
+## Installation
 
 Clone the repository and run the following command in your terminal to install the necessary dependencies:
 
@@ -10,7 +10,7 @@ Clone the repository and run the following command in your terminal to install t
 npm install
 ```
 
-# Usage
+## Usage
 
 To start the application, run the following command in your terminal:
 
@@ -18,19 +18,19 @@ To start the application, run the following command in your terminal:
 npm start
 ```
 
-# Features
+## Features
 
 - Add new todos by typing in the input field and clicking the "Add" button.
 - Edit existing todos by clicking on the todo text and making changes.
 - Delete todos by clicking the delete button next to the todo text.
 - The application persist todos in local storage, so your todos are still there if you refresh or close the browser.
 
-# Technologies
+## Technologies
 
 - React
 - HTML/CSS
 
-# Code Structure
+## Code Structure
 
 This application has two components: `Todo` and `TodoItem`.
 
